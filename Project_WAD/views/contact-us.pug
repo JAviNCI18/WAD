@@ -1,0 +1,13 @@
+include includes/header
+#contact-form
+  h3 Please fill out the form for any query/complaint.
+  #err
+  form
+    .form-group
+      label(for='email') Your Email address
+      input#emailAddress.form-control(type='email', placeholder='name@example.com')
+    .form-group
+      label(for='com') Comments
+      textarea#comments.form-control(rows='3')
+    button#contactFormSubmit.btn.btn-secondary.btn-lg.btn-block(type='button') Submit
+include includes/footer

@@ -1,0 +1,21 @@
+#editForm.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header.text-center
+        h4.modal-title.w-100.font-weight-bold Edit Shop
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body.text-center
+        label(for='shopName') Shop Name
+        input#shopName.form-control(type='text', name='shopname',placeholder='Shop Name',onfocus='clearError()')
+        label(for='Address') Address
+        input#address.form-control(type='text', name='address',placeholder='Address',onfocus='clearError()')
+        label(for='Category') Category
+        input#category.form-control(type='text', name='category',placeholder='Category',onfocus='clearError()')
+        label(for='Phone') Phone
+        input#phone.form-control(type='text', name='phone',placeholder='Phone',onfocus='clearError()')
+        label(for='Email') Email
+        input#email.form-control(type='text', name='email',placeholder='Email',onfocus='clearError()')
+        input#shopId.form-control(type='hidden', name='id')
+      .modal-footer.d-flex.justify-content-center
+        button.btn.btn-default(onclick="editShopBtn()") Edit

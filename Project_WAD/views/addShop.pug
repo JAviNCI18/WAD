@@ -1,0 +1,26 @@
+include includes/header
+.card
+  .card-header
+     h4 Add a new shop
+  .product.text-center
+    .card-body
+      #err
+      form
+        .form-group
+          label(for='shopName') Shop Name
+          input#shopName.form-control(type='text', name='shopname',placeholder='Shop Name',onfocus='clearError()')
+        .form-group
+          label(for='Address') Address
+          input#address.form-control(type='text', name='address',placeholder='Address',onfocus='clearError()')
+        .form-group
+          label(for='Phone') Phone
+          input#phone.form-control(type='text', name='phone',placeholder='Phone number',onfocus='clearError()')
+        .form-group
+          label(for='Category') Category
+          input#category.form-control(type='text', name='category',placeholder='Category',onfocus='clearError()')
+        .form-group
+          label(for='Email') Email
+          input#email.form-control(type='email', name='email',placeholder='Email',onfocus='clearError()')
+
+          a.btn.btn-primary(href='#',onclick=`addShop()`) Add Shop
+include includes/footer

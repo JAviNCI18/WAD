@@ -1,0 +1,20 @@
+include includes/header
+include includes/shopEdit
+
+h4.text-center="Shops List"
+if data.length == 0
+  h6.text-center="No Shops Available"
+each shop in data
+    .card.w-50(id=shop.id,onclick=`toggle(${JSON.stringify(shop.id)})`)
+      .card-header
+         h4 Shop Name: #{shop.shopName}
+         h6 Address: #{shop.address}
+      .product.text-center(id=shop.id+"info",style="display:none;")
+        .card-body
+          span.map(o)
+          h5.card-title Phone: #{shop.phone}
+          h5.card-title Email: #{shop.email}
+          a.btn.btn-primary(href='#',onclick=`deleteShop(${JSON.stringify(shop.id)})`) Delete
+          a.btn.btn-primary(href='#',onclick=`editShop(${JSON.stringify(shop)})`) Edit
+
+include includes/footer

@@ -1,0 +1,20 @@
+#editForm.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header.text-center
+        h4.modal-title.w-100.font-weight-bold Edit Product
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body.text-center
+        #errModal
+        label(for='productName') Product Name
+        input#productName.form-control(type='text', name='productname',placeholder='Product Name',onfocus='clearError()')
+        label(for='Price') Price
+        input#price.form-control(type='text', name='price',placeholder='Price',onfocus='clearError()')
+        label(for='Category') Category
+        input#category.form-control(type='text', name='category',placeholder='Category',onfocus='clearError()')
+        label(for='image') Image
+        input#image.form-control(type='text', name='image',placeholder='Image',onfocus='clearError()')
+        input#productId.form-control(type='hidden', name='id')
+      .modal-footer.d-flex.justify-content-center
+        button.btn.btn-default(onclick='editProductBtn()') Edit

@@ -1,0 +1,22 @@
+include includes/header
+.card
+  .card-header
+     h4 Add a new product
+  .product.text-center
+    .card-body
+      #err
+      form
+        .form-group
+          label(for='productName') Product Name
+          input#productName.form-control(type='text', name='productname',placeholder='Product Name',onfocus='clearError()')
+        .form-group
+          label(for='Category') Category
+          input#category.form-control(type='text', name='category',placeholder='Category',onfocus='clearError()')
+        .form-group
+          label(for='Price') Price
+          input#price.form-control(type='text', name='price',placeholder='Price Euros',onfocus='clearError()')
+        .form-group
+          label(for='ImageURL') Image URL
+          input#image.form-control(type='text', name='imageurl',placeholder='Image URL',onfocus='clearError()')
+          a.btn.btn-primary(href='#',onclick=`addProduct()`) Add Product
+include includes/footer

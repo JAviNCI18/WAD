@@ -1,0 +1,18 @@
+include includes/header
+include includes/productEdit
+h4.text-center="Products List"
+if data.length == 0
+  h6.text-center="No Products Available"
+each product in data
+    .card.w-50(id=product.id,onclick=`toggle(${JSON.stringify(product.id)})`)
+      .card-header
+        h3.float-left #{product.productName}
+        img.img-fluid.img-thumbnail.float-right(width='150', height='150', src=product.image, alt='Card image cap')
+      .product.text-center(id=product.id+"info",style="display:none;")
+        img.img-fluid.img-thumbnail(width='200', height='400', src=product.image, alt='Card image cap')
+        .card-body
+          h5.card-title Category: #{product.category}
+          h5.card-title Price: #{product.price} €
+          a.btn.btn-primary(href='#',onclick=`deleteProduct(${JSON.stringify(product.id)})`) Delete
+          a.btn.btn-primary(href='#',onclick=`editProduct(${JSON.stringify(product)})`) Edit
+include includes/footer
